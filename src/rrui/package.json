@@ -1,0 +1,22 @@
+{
+  "name": "rrui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm install && npm run copy-bs && npm run copy-jq && npm run copy-po",
+    "copy-bs": "cpx ./node_modules/bootstrap/dist/css/bootstrap.min.css ./flaskr/static/css/ && cpx ./node_modules/bootstrap/dist/js/bootstrap.min.js ./flaskr/static/js/",
+    "copy-jq": "cpx ./node_modules/jquery/dist/jquery.slim.min.js ./flaskr/static/js/",
+    "copy-po": "cpx ./node_modules/popper/dist/popper.min.js ./flaskr/static/js/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cpx": "^1.5.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6"
+  }
+}

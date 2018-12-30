@@ -23,6 +23,7 @@ I use Docker on the Raspberry Pi to develop my app. To prepare a Pi from scratch
 1. Install *git* (`sudo apt-get install git`)
 1. Pull the following Docker images:
    1. `docker pull python`
+   1. `docker pull node`
    1. `docker pull trnape/rpi-samba` (I use *Samba* to access files on the Pi from my Windows dev machine)
 1. Clone this repository on the Pi: `git clone https://github.com/rstropek/rpi-recorder.git`
 
@@ -39,7 +40,15 @@ I use Docker on the Raspberry Pi to develop my app. To prepare a Pi from scratch
 
 The Web UI is written in *Python* with [Flask](http://flask.pocoo.org/). You can find the code in the [*rrui*](src/rrui) folder.
 
-Install requirements from the requirements file *requirements.txt*: `pip install -r requirements.txt`
+### Requirements
+
+The following commands assume that your current directory is `~/rpi-recorder/src/rrui`:
+
+1. Install client-side requirements using *NPM*: `docker run --rm -t -v $(pwd):/src -w /src node npm install`
+
+1. Install requirements from the requirements file *requirements.txt*: `pip install -r requirements.txt`
+
+### Debugging and Development
 
 Run the debug version of the Web UI as follows:
 
