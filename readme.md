@@ -25,5 +25,10 @@ I use Docker on the Raspberry Pi to develop my app. To prepare a Pi from scratch
    1. `docker pull python`
    1. `docker pull trnape/rpi-samba` (I use *Samba* to access files on the Pi from my Windows dev machine)
 1. Clone this repository on the Pi: `git clone https://github.com/rstropek/rpi-recorder.git`
-1. Run Samba in Docker container to share files on the network (run [start-samba.sh](utils/start-samba.sh) to start container and make it auto-restart after reboot)
 
+### Utility Scripts
+
+| Script |---|
+|---|---|
+| [start-samba.sh](utils/start-samba.sh) | Run Samba in Docker container to share files on the network. Makes container auto-restart after reboots. See script for user/password of share. |
+| [start-ipython.sh](utils/start-ipython.sh) | Start interactive Docker container with Python. |
