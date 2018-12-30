@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask_bootstrap import Bootstrap
 
 def create_app(test_config=None):
     # create and configure the app
@@ -21,9 +22,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    Bootstrap(app)
+    app.config['BOOTSTRAP_SERVE_LOCAL'] = True
+
+    from . import recording
+    app.register_blueprint(recording.bp)
 
     return app
