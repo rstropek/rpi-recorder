@@ -4,7 +4,7 @@
 
 Sample project for building a video recording tool with a web frontend based on Raspberry Pi. This is just a side project used to learn about Raspberry, it's camera support, Python etc.
 
-## Notes
+## Getting Started
 
 ### Prerequisites
 
@@ -28,7 +28,23 @@ I use Docker on the Raspberry Pi to develop my app. To prepare a Pi from scratch
 
 ### Utility Scripts
 
-| Script |---|
-|---|---|
-| [start-samba.sh](utils/start-samba.sh) | Run Samba in Docker container to share files on the network. Makes container auto-restart after reboots. See script for user/password of share. |
-| [start-ipython.sh](utils/start-ipython.sh) | Start interactive Docker container with Python. |
+| Script                                     | Description |
+|--------------------------------------------|---|
+| [start-samba.sh](utils/start-samba.sh)     | Run Samba in Docker container to share files on the network. Makes container auto-restart after reboots. See script for user/password of share. |
+| [start-ipython.sh](utils/start-ipython.sh) | Start interactive Docker container with Python. Use this container so that you do not have to install Python directly on the Pi. |
+
+## Web UI
+
+### Introduction
+
+The Web UI is written in *Python* with [Flask](http://flask.pocoo.org/). You can find the code in the [*rrui*](src/rrui) folder.
+
+Install requirements from the requirements file *requirements.txt*: `pip install -r requirements.txt`
+
+Run the debug version of the Web UI as follows:
+
+```sh
+export FLASK_APP=flaskr
+export FLASK_ENV=development
+flask run --host=0.0.0.0
+```
