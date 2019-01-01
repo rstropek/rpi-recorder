@@ -33,6 +33,7 @@ I use Docker on the Raspberry Pi to develop my app. To prepare a Pi from scratch
 |--------------------------------------------|---|
 | [start-samba.sh](utils/start-samba.sh)     | Run Samba in Docker container to share files on the network. Makes container auto-restart after reboots. See script for user/password of share. |
 | [start-ipython.sh](utils/start-ipython.sh) | Start interactive Docker container with Python. Use this container so that you do not have to install Python directly on the Pi. |
+| [start-redis.sh](utils/start-redis.sh)     | Run Redis in Docker container for Flask signals. Makes container auto-restart after reboots. |
 
 ## Web UI
 
@@ -42,11 +43,9 @@ The Web UI is written in *Python* with [Flask](http://flask.pocoo.org/). You can
 
 ### Requirements
 
-The following commands assume that your current directory is `~/rpi-recorder/src/rrui`:
+1. Install client-side requirements using *NPM*: In directory `~/rpi-recorder/src/rrui` run `docker run --rm -t -v $(pwd):/src -w /src node npm run install`
 
-1. Install client-side requirements using *NPM*: `docker run --rm -t -v $(pwd):/src -w /src node npm install`
-
-1. Install requirements from the requirements file *requirements.txt*: `pip install -r requirements.txt`
+1. In Python Docker containers install requirements from the requirements file *requirements.txt*: `pip install -r requirements.txt`
 
 ### Debugging and Development
 

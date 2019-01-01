@@ -7,7 +7,7 @@
     "install": "npm install && npm run copy-bs && npm run copy-jq && npm run copy-po",
     "copy-bs": "cpx ./node_modules/bootstrap/dist/css/bootstrap.min.css ./flaskr/static/css/ && cpx ./node_modules/bootstrap/dist/js/bootstrap.min.js ./flaskr/static/js/",
     "copy-jq": "cpx ./node_modules/jquery/dist/jquery.slim.min.js ./flaskr/static/js/",
-    "copy-po": "cpx ./node_modules/popper/dist/popper.min.js ./flaskr/static/js/"
+    "copy-po": "cpx ./node_modules/popper.js/dist/umd/popper.min.js ./flaskr/static/js/"
   },
   "author": "",
   "license": "ISC",

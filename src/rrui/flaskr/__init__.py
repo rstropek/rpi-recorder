@@ -1,6 +1,5 @@
 import os
 from flask import Flask
-from flask_bootstrap import Bootstrap
 
 def create_app(test_config=None):
     # create and configure the app
@@ -21,9 +20,6 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
-    Bootstrap(app)
-    app.config['BOOTSTRAP_SERVE_LOCAL'] = True
 
     from . import recording
     app.register_blueprint(recording.bp)

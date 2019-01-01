@@ -1,7 +1,23 @@
 {%- extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <h1>Hello World</h1>
+<div class="container-fluid">
+    {% if recording %}
+    <div class="row">
+        <div class="col">
+            ON AIR
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col">
+            <a href="start-recording" class="btn btn-primary" style="width:100%">Record</a>
+        </div>
+
+        <div class="col">
+            <a href="stop-recording" class="btn btn-primary" style="width:100%">Stop Recording</a>
+        </div>
+    </div>
 </div>
 {%- endblock %}
