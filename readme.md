@@ -53,6 +53,6 @@ Run the debug version of the Web UI as follows:
 
 ```sh
 export FLASK_APP=flaskr
-export FLASK_ENV=development
+export FLASK_ENV=production
 flask run --host=0.0.0.0
 ```
